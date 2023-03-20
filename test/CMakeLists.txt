@@ -23,7 +23,3 @@ TARGET_LINK_LIBRARIES(${TEST_BUILD_NAME} wbcrypto)
 set(TEST_BUILD_NAME test_performance)
 add_executable(${TEST_BUILD_NAME} test_local.c test_performance.c)
 TARGET_LINK_LIBRARIES(${TEST_BUILD_NAME} wbcrypto)
-
-set(TEST_BUILD_NAME test)
-add_executable(${TEST_BUILD_NAME} test_local.c test.c)
-TARGET_LINK_LIBRARIES(${TEST_BUILD_NAME} wbcrypto)

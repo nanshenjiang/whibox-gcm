@@ -4,8 +4,13 @@ project(whibox-gcm)
 SET(BUILD_NAME ${PROJECT_NAME})
 
 #open test
-option(UNIT_TEST "test" ON)
-set(UNIT_TEST "test" ON)
+option(TEST "test" ON)
+# test
+IF(TEST)
+    ADD_SUBDIRECTORY(test)
+ELSE(TEST)
+    message(STATUS "${PROJECT_NAME} TEST OFF")
+ENDIF(TEST)
 
 # global import header file
 set(WBCRYPTO_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
@@ -41,12 +46,5 @@ install(TARGETS wbcrypto wbcrypto-static
         LIBRARY DESTINATION lib  
         ARCHIVE DESTINATION lib  
         )
-
-# test
-IF(UNIT_TEST)
-    ADD_SUBDIRECTORY(test)
-ELSE(UNIT_TEST)
-    message(STATUS "${PROJECT_NAME} TEST OFF")
-ENDIF(UNIT_TEST)
 
 SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -O2")

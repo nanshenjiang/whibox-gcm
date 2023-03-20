@@ -32,6 +32,9 @@ extern "C" {
     typedef int (*block128_f) (const unsigned char in[16], unsigned char out[16],
                                const void *key);
 
+    /******************************************************************
+    * GCM mode
+    *****************************************************************/
     struct gcm128_context{
         uint64_t len;                   // cipher data length processed so far
         uint64_t add_len;               // total add data length
@@ -122,8 +125,6 @@ extern "C" {
      * @param ctx
      */
     void WBCRYPTO_gcm_free(WBCRYPTO_gcm_context *ctx);
-
-
 
 #ifdef  __cplusplus
 }

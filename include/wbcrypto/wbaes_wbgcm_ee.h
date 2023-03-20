@@ -10,7 +10,7 @@ extern "C" {
 #endif
 
     /******************************************************************
-    * CHOW Whitebox-AES with whibox-gcm mode
+    * CHOW Whitebox-AES with whibox-gcm mode (WBGCM-EE1)
     *****************************************************************/
     struct wbaes_wbgcm_ee_context {
         uint32_t TypeII[10][16][256];
